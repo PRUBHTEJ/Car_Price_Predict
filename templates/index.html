@@ -32,7 +32,12 @@
             </select>
             <br><br><button id="sub" type="submit ">Calculate the Selling Price</button>
             <br>
-
+ <dialog id="answer" style="width:50%;height : 50%;background-color:grey;border:10px dotted black;">  
+<p><q>Your Car hava a value of  
+</q> : </p>
+          <br><br><h3>{{ prediction_text }}<h3>
+<button id="hide" style="top: 50vw;">Close</button>  
+</dialog>  
 
 
 
@@ -40,11 +45,21 @@
 
 
 
-        <br><br><h3>{{ prediction_text }}<h3>
+      
     </div>
 
 
-
+<script type="text/JavaScript">  
+(function() {    
+    var dialog = document.getElementById('answer');    
+    document.getElementById('sub').onclick = function() {    
+        dialog.show();    
+    };    
+    document.getElementById('hide').onclick = function() {    
+        dialog.close();    
+    };    
+})();   
+</script>  
 
     <style>
         body {
